@@ -1,0 +1,39 @@
+{
+  "name": "void",
+  "version": "1.0.0",
+  "description": "Void cli is a npm library for dealing automatization development.",
+  "main": "server.js",
+  "scripts": {
+    "test": "yarn test",
+    "start": "babel-node server.js",
+    "debug": "nodemon --exec babel-node server.js --inspect=9229"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voidp34r/void.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "cli",
+    "dev"
+  ],
+  "author": "Matheus Rafael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voidp34r/void/issues"
+  },
+  "homepage": "https://github.com/voidp34r/void#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "helmet": "^3.18.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "dotenv": "^8.0.0",
+    "nodemon": "^1.19.0"
+  }
+}

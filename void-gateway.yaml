@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: void-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: void
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - void-gateway
+  http:
+  - match:
+    - uri:
+        exact: /void
+    route:
+    - destination:
+        host: void
+        port:
+          number: 3000

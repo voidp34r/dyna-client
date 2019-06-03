@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: void
+spec:
+  selector:
+    matchLabels:
+      app: void
+  template:
+    metadata:
+      labels:
+        app: void
+    spec:
+      containers:
+      - name: void
+        image: voidp34r/void:dev
+        resources:
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: void
+spec:
+  selector:
+    app: void
+  ports:
+  - port: 3000
+    targetPort: 3000
